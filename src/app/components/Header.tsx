@@ -10,7 +10,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navItems = [
     { label: "HOME", href: "/" },
-    { label: "WIN $1,125 MILLION", href: "/1125000-grand-prize" },
+    { label: "WIN $1,125 MILLION", href: "/prize/grand-prize" },
     { label: "TRIP TO PARADISE", href: "/win-a-trip-to-paradise" },
     { label: "ULTIMATE HOME THEATER", href: "/ultimate-home-theater" },
     { label: "EUROPE EXTRAVAGANZA", href: "/european-extravaganza" },
