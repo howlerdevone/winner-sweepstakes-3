@@ -11,9 +11,9 @@ export default function Header() {
   const navItems = [
     { label: "HOME", href: "/" },
     { label: "WIN $1,125 MILLION", href: "/prize/grand-prize" },
-    { label: "TRIP TO PARADISE", href: "/win-a-trip-to-paradise" },
-    { label: "ULTIMATE HOME THEATER", href: "/ultimate-home-theater" },
-    { label: "EUROPE EXTRAVAGANZA", href: "/european-extravaganza" },
+    { label: "TRIP TO PARADISE", href: "/prize/trip-paradise" },
+    { label: "ULTIMATE HOME THEATER", href: "/prize/ultimate-home-theater" },
+    { label: "EUROPE EXTRAVAGANZA", href: "/prize/european-extravaganza" },
     { label: "RULES & REGULATIONS", href: "/rules-regulations" },
     { label: "Contact Us", href: "/contact-us" },
   ];

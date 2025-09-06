@@ -10,12 +10,9 @@ import {
   Mail,
   User,
   Phone,
-  Link,
 } from "lucide-react";
-
-interface PrizeDetailProps {
-  prizeId: string;
-}
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
 interface PrizeData {
   title: string;
@@ -35,8 +32,10 @@ interface PrizeData {
   };
 }
 
-// Server component version
-export default function PrizeDetailPage({ prizeId }: PrizeDetailProps) {
+export default function PrizeDetailPage() {
+  const params = useParams();
+  const prizeId = params.prizeId as string;
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -123,6 +122,71 @@ export default function PrizeDetailPage({ prizeId }: PrizeDetailProps) {
               "Trip must be taken within 12 months of notification. Blackout dates may apply during peak seasons. Winner and guest must travel together on same itinerary.",
           },
         };
+      case "ultimate-home-theater":
+        return {
+          title: "Ultimate Home Theater System",
+          subtitle: "Transform your home into a cinematic paradise",
+          heroImage:
+            "https://images.pexels.com/photos/1201996/pexels-photo-1201996.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          description:
+            "Enter now for your chance to win the ultimate home theater system worth $35,000! Experience movies, sports, and gaming like never before with professional-grade equipment and installation.",
+          benefits: [
+            "85-inch 8K OLED display with HDR technology",
+            "Professional 7.2.4 Dolby Atmos sound system",
+            "Premium leather reclining theater seating for 6",
+            "Smart home integration and lighting control",
+            "Professional calibration and installation",
+            "Universal remote control system",
+            "5-year extended warranty on all equipment",
+          ],
+          value: "$35,000 Home Theater System",
+          drawingDate: "September 30, 2025",
+          eligibility: "18+ US Residents Only",
+          entryFee: "FREE - No Purchase Required",
+          detailedRules: {
+            eligibility:
+              "Must be 18 years or older and a legal resident of the United States. Winner must have suitable space for installation.",
+            entryPeriod:
+              "Sweepstakes begins January 1, 2025 and ends September 25, 2025 at 11:59 PM EST.",
+            winnerSelection:
+              "One winner will be selected at random from all eligible entries. Winner will be notified by email and phone within 5 business days.",
+            prizeDetails:
+              "Installation must be completed within 90 days of notification. Home inspection required for installation feasibility.",
+          },
+        };
+      case "european-extravaganza":
+        return {
+          title: "European Extravaganza Vacation",
+          subtitle: "14-day luxury tour across 5 European countries",
+          heroImage:
+            "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          description:
+            "Enter now for your chance to win an incredible 14-day European vacation for two! Visit 5 amazing countries with luxury accommodations, guided tours, and unforgettable experiences worth $18,000.",
+          benefits: [
+            "14 days and 13 nights luxury accommodations",
+            "Visit Paris, Rome, Barcelona, Amsterdam, and Prague",
+            "Round-trip business class flights for two",
+            "Professional guided tours in each city",
+            "All breakfasts and 8 gourmet dinners included",
+            "High-speed train travel between cities",
+            "Travel insurance and concierge services",
+            "€1,000 spending money included",
+          ],
+          value: "$18,000 European Vacation",
+          drawingDate: "August 15, 2025",
+          eligibility: "21+ US Residents Only",
+          entryFee: "FREE - No Purchase Required",
+          detailedRules: {
+            eligibility:
+              "Must be 21 years or older and a legal resident of the United States. Valid passports required for both travelers.",
+            entryPeriod:
+              "Sweepstakes begins January 1, 2025 and ends August 10, 2025 at 11:59 PM EST.",
+            winnerSelection:
+              "One winner will be selected at random from all eligible entries. Winner will be notified by email and phone within 3 business days.",
+            prizeDetails:
+              "Trip must be taken within 18 months of notification. Blackout dates apply during peak seasons. Both travelers must travel together.",
+          },
+        };
       default:
         return {
           title: "Amazing Prize",
@@ -157,7 +221,7 @@ export default function PrizeDetailPage({ prizeId }: PrizeDetailProps) {
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link
-            to="/"
+            href="/"
             className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
