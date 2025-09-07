@@ -1,44 +1,16 @@
 import React from "react";
+import { PrizeService } from "../services/prizeService";
 
 export default function PrizeShowcase() {
-  const prizes = [
-    {
-      id: 1,
-      category: "WINNERSWEEPSTAKES",
-      title: "Ultimate Home Theater",
-      description:
-        "ENTER NOW FOR A CHANCE TO WIN A STATE OF THE ART HOME THEATER LIKE NO...",
-      image:
-        "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800",
-    },
-    {
-      id: 2,
-      category: "WINNERSWEEPSTAKES",
-      title: "Trip To Paradise",
-      description:
-        "ENTER NOW FOR A CHANCE TO WIN A 4-DAY/3-NIGHT PARADISE GETAWAY! Choose from any of these...",
-      image:
-        "https://images.pexels.com/photos/1024248/pexels-photo-1024248.jpeg?auto=compress&cs=tinysrgb&w=800",
-    },
-    {
-      id: 3,
-      category: "WINNERSWEEPSTAKES",
-      title: "Win $1,125 Million",
-      description:
-        "ENTER NOW FOR A CHANCE TO WIN THE ULTIMATE CASH PRIZE! Life-changing money that could...",
-      image:
-        "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800",
-    },
-    {
-      id: 4,
-      category: "WINNERSWEEPSTAKES",
-      title: "Europe Extravaganza",
-      description:
-        "ENTER NOW FOR A CHANCE TO WIN AN INCREDIBLE EUROPEAN ADVENTURE! Visit the most beautiful...",
-      image:
-        "https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=800",
-    },
-  ];
+  const prizes = Object.entries(PrizeService.getAllPrizes()).map(
+    ([id, prize]) => ({
+      id,
+      category: prize.category,
+      title: prize.title,
+      description: prize.description,
+      image: prize.heroImage,
+    })
+  );
 
   return (
     <section className="bg-gray-50 py-20">

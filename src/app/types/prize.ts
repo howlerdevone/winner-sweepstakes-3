@@ -1,5 +1,7 @@
 export interface PrizeData {
   title: string;
+  link: string;
+  category: string,
   subtitle: string;
   heroImage: string;
   description: string;

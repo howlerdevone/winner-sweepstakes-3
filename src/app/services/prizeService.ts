@@ -3,6 +3,8 @@ import { PrizeData } from '@/app/types/prize';
 const PRIZE_DATA: Record<string, PrizeData> = {
   "grand-prize": {
     title: "Win $1,125,000",
+    link: "grand-prize",
+    category: "WINNERSWEEPSTAKES",
     subtitle: "Life-changing cash prize that could transform your future",
     heroImage: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=1200",
     description: "Enter now for your chance to win the ultimate cash prize of $1,125,000! This life-changing amount could completely transform your future and give you the financial freedom you've always dreamed of.",
@@ -27,6 +29,8 @@ const PRIZE_DATA: Record<string, PrizeData> = {
   },
   "trip-paradise": {
   title: "Trip To Paradise",
+  link: "trip-paradise",
+  category: "WINNERSWEEPSTAKES",
   subtitle: "A 4-day/3-night paradise getaway to your dream destination",
   heroImage: "https://images.pexels.com/photos/1024248/pexels-photo-1024248.jpeg?auto=compress&cs=tinysrgb&w=1200",
   description: "Enter now for your chance to win a 4-day/3-night paradise getaway! Choose from any of these incredible tropical destinations and experience the vacation of a lifetime with luxury accommodations, pristine beaches, and unforgettable experiences.",
@@ -53,7 +57,9 @@ const PRIZE_DATA: Record<string, PrizeData> = {
 },
 
 "ultimate-home-theater": {
-  title: "Ultimate Home Theater System",
+  title: "Ultimate Home Theater",
+  link: "ultimate-home-theater",
+  category: "WINNERSWEEPSTAKES",
   subtitle: "Transform your home into a cinematic paradise",
   heroImage: "https://images.pexels.com/photos/1201996/pexels-photo-1201996.jpeg?auto=compress&cs=tinysrgb&w=1200",
   description: "Enter now for your chance to win the ultimate home theater system worth $35,000! Experience movies, sports, and gaming like never before with professional-grade equipment and installation that will make your home the entertainment destination of choice.",
@@ -80,7 +86,9 @@ const PRIZE_DATA: Record<string, PrizeData> = {
 },
 
 "european-extravaganza": {
-  title: "European Extravaganza Vacation",
+  title: "Europe Extravaganza",
+  link: "european-extravaganza",
+  category: "WINNERSWEEPSTAKES",
   subtitle: "14-day luxury tour across 5 European countries",
   heroImage: "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=1200",
   description: "Enter now for your chance to win an incredible 14-day European vacation for two! Visit 5 amazing countries with luxury accommodations, guided tours, and unforgettable experiences worth $18,000. Discover the magic of Europe in style and comfort.",
