@@ -3,12 +3,17 @@ import {
   Mail,
   Phone,
   MapPin,
+  Instagram,
   Facebook,
   Twitter,
-  Instagram,
 } from "lucide-react";
+import { CompanyData } from "@/app/types/company";
+import { CompanyService } from "@/app/services/companyService";
+
 
 export default function Footer() {
+  const companyInfo: CompanyData | null = CompanyService.getCompanyById("info");
+
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,30 +21,29 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="text-3xl font-bold mb-4">
-              <span className="text-yellow-500">WINNER</span>
+              <span className="text-yellow-500">{companyInfo?.name.split(" ")[0].toLocaleUpperCase()}</span>
               <div className="text-sm font-normal text-gray-400 tracking-widest">
-                SWEEPSTAKES
+                {companyInfo?.name.split(" ")[1].toLocaleUpperCase()}
               </div>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Your trusted destination for legitimate sweepstakes and contests.
-              Join millions of participants and win amazing prizes.
+              {companyInfo?.description}
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href={`https://www.facebook.com/${companyInfo?.socialMedia.facebook}`}
                 className="text-gray-400 hover:text-yellow-500 transition-colors"
               >
                 <Facebook size={24} />
               </a>
               <a
-                href="#"
+                href={`https://www.x.com/${companyInfo?.socialMedia.twitter}`}
                 className="text-gray-400 hover:text-yellow-500 transition-colors"
               >
                 <Twitter size={24} />
               </a>
               <a
-                href="#"
+                href={`https://www.instagram.com/${companyInfo?.socialMedia.instagram}`}
                 className="text-gray-400 hover:text-yellow-500 transition-colors"
               >
                 <Instagram size={24} />
@@ -59,7 +63,7 @@ export default function Footer() {
                   Current Sweepstakes
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -82,7 +86,7 @@ export default function Footer() {
                 >
                   Prize Gallery
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -93,16 +97,16 @@ export default function Footer() {
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-yellow-500" />
                 <span className="text-gray-400">
-                  info@winnersweepstakes.com
+                  {companyInfo?.contactInfo.email}
                 </span>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-yellow-500" />
-                <span className="text-gray-400">1-800-WINNERS</span>
+                <span className="text-gray-400">{companyInfo?.contactInfo.phone}</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 mr-3 text-yellow-500" />
-                <span className="text-gray-400">New York, NY</span>
+                <span className="text-gray-400">{companyInfo?.contactInfo.address}</span>
               </div>
             </div>
           </div>
@@ -111,7 +115,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2025 Winner Sweepstakes. All rights reserved.
+              © {new Date().getFullYear()} {companyInfo?.name}. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a
@@ -121,16 +125,10 @@ export default function Footer() {
                 Privacy Policy
               </a>
               <a
-                href="#"
+                href="/rules-regulations"
                 className="text-gray-400 hover:text-white text-sm transition-colors"
               >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Official Rules
+                Rules and Regulations
               </a>
             </div>
           </div>
